@@ -1,0 +1,6 @@
+{
+  "id": "simple-feature",
+  "version": "1.0.0",
+  "name": "Simple Feature",
+  "installPath": "/usr/local/bin"
+}

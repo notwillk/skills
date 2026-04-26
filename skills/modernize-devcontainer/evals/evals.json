@@ -1,0 +1,46 @@
+{
+  "skill_name": "modernize-devcontainer",
+  "evals": [
+    {
+      "id": 1,
+      "name": "migrate-appPort",
+      "prompt": "Update my old devcontainer.json - it uses appPort which I heard is deprecated.",
+      "expected_output": "Modernized devcontainer.json with forwardPorts replacing appPort.",
+      "files": ["evals/files/legacy-appPort.json"],
+      "assertions": [
+        "Replaces appPort with forwardPorts",
+        "Maintains same port numbers",
+        "Updates to current schema version",
+        "Valid JSON output",
+        "No deprecated properties remain"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "migrate-extensions",
+      "prompt": "My devcontainer uses the old 'extensions' property. Can you modernize it?",
+      "expected_output": "Updated devcontainer.json with extensions moved to customizations.vscode.",
+      "files": ["evals/files/legacy-extensions.json"],
+      "assertions": [
+        "Moves extensions to customizations.vscode.extensions",
+        "Preserves all extension IDs",
+        "Removes deprecated 'extensions' property at root",
+        "Valid JSON output",
+        "Follows current spec format"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "schema-version-update",
+      "prompt": "Update my devcontainer from schema version 1.0.0 to the latest.",
+      "expected_output": "devcontainer.json updated to latest schema with all necessary migrations.",
+      "files": ["evals/files/old-schema.json"],
+      "assertions": [
+        "Updates schema version to current",
+        "Migates deprecated properties",
+        "Valid JSON output",
+        "Configuration follows current best practices"
+      ]
+    }
+  ]
+}

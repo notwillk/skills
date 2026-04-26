@@ -1,0 +1,44 @@
+{
+  "skill_name": "debug-devcontainer-build",
+  "evals": [
+    {
+      "id": 1,
+      "name": "feature-install-failure",
+      "prompt": "My devcontainer build is failing with this error:\n\n```\n[2024-01-15T10:30:00.123Z] ERROR: Feature 'ghcr.io/devcontainers/features/node:1' failed to install\n[2024-01-15T10:30:00.124Z] Exit code 1\n[2024-01-15T10:30:00.125Z] npm ERR! code ENOENT\n[2024-01-15T10:30:00.126Z] npm ERR! syscall open\n[2024-01-15T10:30:00.127Z] npm ERR! path /usr/local/lib/node_modules/npm/package.json\n```\n\nWhat's wrong and how do I fix it?",
+      "expected_output": "Diagnosis identifying the issue (likely Node/npm installation conflict or missing package) with specific fix steps.",
+      "files": [],
+      "assertions": [
+        "Identifies the error type (feature installation failure)",
+        "Provides specific fix steps",
+        "Mentions checking Node version compatibility",
+        "Suggests alternative approaches if applicable"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "permission-denied-error",
+      "prompt": "My container won't start. I see this in the logs:\n\n```\n[2024-01-15T09:15:00.456Z] Start: Run: docker compose...\n[2024-01-15T09:15:00.789Z] permission denied while trying to connect to Docker daemon\n[2024-01-15T09:15:00.790Z] at /var/run/docker.sock\n```",
+      "expected_output": "Diagnosis of Docker permission issue with specific remediation steps.",
+      "files": [],
+      "assertions": [
+        "Identifies Docker permission issue",
+        "Suggests checking user group membership (docker group)",
+        "Provides command to fix (usermod -aG docker)",
+        "Mentions needing to log out and back in"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "network-timeout-error",
+      "prompt": "Build keeps failing with network errors. Log shows:\n\n```\n[2024-01-15T08:20:00.111Z] Failed to fetch https://packages.microsoft.com/repos/...\n[2024-01-15T08:20:00.222Z] Connection timed out after 30001 milliseconds\n[2024-01-15T08:25:00.333Z] E: Failed to fetch packages\n```",
+      "expected_output": "Diagnosis of network timeout with retry strategies and alternative solutions.",
+      "files": [],
+      "assertions": [
+        "Identifies network timeout issue",
+        "Suggests retry strategies",
+        "Mentions checking proxy/VPN settings",
+        "Suggests alternative registries if applicable"
+      ]
+    }
+  ]
+}

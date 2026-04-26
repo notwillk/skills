@@ -1,0 +1,46 @@
+{
+  "skill_name": "create-github-action",
+  "evals": [
+    {
+      "id": 1,
+      "name": "create-devcontainer-publish",
+      "prompt": "Create a workflow to publish my devcontainer features. The repository has features in src/.",
+      "expected_output": "Complete publish-features.yml workflow with test discovery, test matrix job, and publish job to ghcr.io.",
+      "files": [],
+      "assertions": [
+        "Created .github/workflows/publish-features.yml",
+        "Workflow has discover, test, and publish jobs",
+        "Uses devcontainers/ci for testing",
+        "Uses devcontainers/action for publishing",
+        "Has packages: write permission"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "create-custom-test",
+      "prompt": "Create a workflow that runs tests on every pull request. Tests are run with 'npm test'.",
+      "expected_output": "Generic workflow with pull_request trigger and npm test step.",
+      "files": [],
+      "assertions": [
+        "Created .github/workflows/<name>.yml",
+        "Trigger is pull_request",
+        "Job runs on ubuntu-latest",
+        "Runs npm test",
+        "Minimal permissions (contents: read)"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "custom-workflow-name",
+      "prompt": "Create a workflow named 'release.yml' that triggers on pushes to main and runs a build script.",
+      "expected_output": "Workflow at .github/workflows/release.yml with push trigger for main branch.",
+      "files": [],
+      "assertions": [
+        "Created .github/workflows/release.yml",
+        "Trigger is push to main",
+        "Name is 'release' or similar",
+        "Runs build script"
+      ]
+    }
+  ]
+}

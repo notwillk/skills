@@ -1,0 +1,8 @@
+{
+  "name": "Old Schema Dev Container",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:14",
+  "appPort": 3000,
+  "extensions": ["dbaeumer.vscode-eslint"],
+  "runArgs": ["--env", "NODE_ENV=development"],
+  "postCreateCommand": "npm install"
+}

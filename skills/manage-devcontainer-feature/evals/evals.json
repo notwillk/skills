@@ -1,0 +1,45 @@
+{
+  "skill_name": "manage-devcontainer-feature",
+  "evals": [
+    {
+      "id": 1,
+      "name": "create-binary-feature",
+      "prompt": "Create a new devcontainer feature for jq (JSON processor). It should download from GitHub releases.",
+      "expected_output": "Complete feature structure in src/jq/ with devcontainer-feature.json, install.sh, test.sh using binary download pattern.",
+      "files": [],
+      "assertions": [
+        "Created src/jq/devcontainer-feature.json with valid structure",
+        "Created src/jq/install.sh using binary download pattern",
+        "Created src/jq/test.sh with smoke test",
+        "Version is 1.0.0",
+        "install.sh is executable pattern"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "bump-version-patch",
+      "prompt": "I fixed a bug in my feature's install.sh - the download URL was wrong. Please bump the version.",
+      "expected_output": "Detects install.sh changed with same mechanism, suggests patch bump, updates version.",
+      "files": ["evals/files/existing-feature.json"],
+      "assertions": [
+        "Detects change in install.sh",
+        "Identifies as patch-level change",
+        "Bumps version (e.g., 1.0.0 → 1.0.1)",
+        "Updates devcontainer-feature.json"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "add-option-minor",
+      "prompt": "Add an 'installPath' option to my feature so users can choose where to install the binary.",
+      "expected_output": "Adds option to devcontainer-feature.json, updates install.sh to use the option, bumps minor version.",
+      "files": ["evals/files/simple-feature.json"],
+      "assertions": [
+        "Adds installPath option with proper structure",
+        "Updates install.sh to use INSTALLPATH env var",
+        "Bumps minor version",
+        "Option has type, default, description"
+      ]
+    }
+  ]
+}

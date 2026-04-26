@@ -1,0 +1,47 @@
+{
+  "skill_name": "create-devcontainer-config",
+  "evals": [
+    {
+      "id": 1,
+      "name": "create-node-project",
+      "prompt": "I need a devcontainer for my Node.js project. It uses Express and MongoDB.",
+      "expected_output": "Complete devcontainer.json with Node image, MongoDB feature, and appropriate port forwarding.",
+      "files": [],
+      "assertions": [
+        "Creates valid devcontainer.json",
+        "Uses appropriate Node.js base image or feature",
+        "Includes MongoDB feature or reference",
+        "Forwards common ports (3000, 27017)",
+        "Configuration follows best practices"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "create-python-django",
+      "prompt": "Setup devcontainers for my Python Django project with PostgreSQL.",
+      "expected_output": "devcontainer.json with Python image, PostgreSQL feature, and Django-specific configuration.",
+      "files": [],
+      "assertions": [
+        "Creates valid devcontainer.json",
+        "Uses Python base image",
+        "Includes PostgreSQL feature",
+        "Forwards port 8000 (Django default)",
+        "Configuration is valid JSON"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "minimal-setup",
+      "prompt": "I need a minimal devcontainer setup for a simple web project. Just the basics.",
+      "expected_output": "Minimal but complete devcontainer.json with essential configuration.",
+      "files": [],
+      "assertions": [
+        "Creates valid devcontainer.json",
+        "Uses a standard base image",
+        "Includes basic customizations",
+        "No unnecessary complexity",
+        "Ready to use immediately"
+      ]
+    }
+  ]
+}

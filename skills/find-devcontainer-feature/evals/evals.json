@@ -1,0 +1,44 @@
+{
+  "skill_name": "find-devcontainer-feature",
+  "evals": [
+    {
+      "id": 1,
+      "name": "find-postgres-feature",
+      "prompt": "What features are available for PostgreSQL? I need a database for my app.",
+      "expected_output": "List of PostgreSQL-related features from official and community catalogs with IDs, descriptions, and configuration options.",
+      "files": [],
+      "assertions": [
+        "Returns PostgreSQL features",
+        "Includes feature IDs in format ghcr.io/...",
+        "Shows configuration options",
+        "Distinguishes official vs community features"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "find-python-feature",
+      "prompt": "Find me a Python feature for my devcontainer. I need Python 3.11.",
+      "expected_output": "Python feature options with installation instructions for Python 3.11.",
+      "files": [],
+      "assertions": [
+        "Returns Python-related features",
+        "Mentions Python 3.11 specifically",
+        "Includes installation snippet or configuration",
+        "Provides feature ID"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "search-by-capability",
+      "prompt": "I want to add some development tools to my container. What features exist for linting and code quality?",
+      "expected_output": "Features related to linting, formatting, and code quality tools.",
+      "files": [],
+      "assertions": [
+        "Returns relevant features",
+        "Categories or describes tools by purpose",
+        "Includes popular tools (eslint, prettier, etc.)",
+        "Provides actionable information"
+      ]
+    }
+  ]
+}

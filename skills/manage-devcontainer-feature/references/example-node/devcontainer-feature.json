@@ -1,0 +1,15 @@
+{
+  "id": "node",
+  "version": "1.0.0",
+  "name": "Node.js",
+  "description": "Installs Node.js and npm from official Node.js distributions",
+  "documentationURL": "https://nodejs.org/",
+  "options": {
+    "version": {
+      "type": "string",
+      "default": "latest",
+      "description": "Version of Node.js to install",
+      "proposals": ["latest", "lts", "20", "18", "16"]
+    }
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "skill_name": "update-devcontainer-config",
+  "evals": [
+    {
+      "id": 1,
+      "name": "add-redis-feature",
+      "prompt": "Add Redis to my devcontainer. I need it for caching in my Node.js app.",
+      "expected_output": "Updated devcontainer.json with Redis feature added, appropriate port forwarding (6379), and lifecycle scripts configured if needed.",
+      "files": ["evals/files/basic-devcontainer.json"],
+      "assertions": [
+        "devcontainer.json contains a 'features' section",
+        "Redis feature is included (ghcr.io/devcontainers/features/redis or similar)",
+        "Port 6379 is forwarded or documented",
+        "Configuration is valid JSON"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "configure-port-forwarding",
+      "prompt": "I need to expose port 3000 and 8080 from my devcontainer so I can access my web app and API.",
+      "expected_output": "devcontainer.json with forwardPorts array containing 3000 and 8080, possibly with labels.",
+      "files": ["evals/files/basic-devcontainer.json"],
+      "assertions": [
+        "forwardPorts array exists and contains 3000",
+        "forwardPorts array contains 8080",
+        "Configuration is valid JSON"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "update-node-version",
+      "prompt": "Update my devcontainer to use Node 20 instead of Node 18. I need the latest LTS.",
+      "expected_output": "Updated devcontainer.json with Node 20 feature or image reference.",
+      "files": ["evals/files/node18-devcontainer.json"],
+      "assertions": [
+        "Node version updated to 20 (in image or feature)",
+        "Configuration is valid JSON",
+        "No syntax errors in the file"
+      ]
+    }
+  ]
+}
