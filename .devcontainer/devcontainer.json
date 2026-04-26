@@ -8,6 +8,7 @@
     "ghcr.io/notwillk/devcontainer-features/just": {},
     "ghcr.io/notwillk/devcontainer-features/jq": {},
     "ghcr.io/notwillk/devcontainer-features/opencode": {},
+    "ghcr.io/notwillk/devcontainer-features/skills": {},
     "ghcr.io/notwillk/devcontainer-features/watchexec": {}
   },
   "containerEnv": {

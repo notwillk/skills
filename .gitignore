@@ -24,3 +24,6 @@ vendor/
 
 # Checksy cache
 .checksy-cache
+
+.agents/skills
+eval-workspace
