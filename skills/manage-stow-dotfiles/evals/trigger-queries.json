@@ -1,0 +1,29 @@
+{
+  "skill_name": "manage-stow-dotfiles",
+  "queries": [
+    {
+      "query": "Set up GNU Stow for my dotfiles repo so dot-zshrc links to ~/.zshrc.",
+      "should_trigger": true
+    },
+    {
+      "query": "Migrate my existing ~/.config/nvim into ~/dotfiles using --dotfiles.",
+      "should_trigger": true
+    },
+    {
+      "query": "Should I use --adopt for my existing ~/.gitconfig?",
+      "should_trigger": true
+    },
+    {
+      "query": "Stow /usr/local/stow/perl into /usr/local.",
+      "should_trigger": false
+    },
+    {
+      "query": "Fix a Stow conflict where ~/.zshrc already exists.",
+      "should_trigger": false
+    },
+    {
+      "query": "Write a shell alias for ls.",
+      "should_trigger": false
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "skill_name": "manage-stow-packages",
+  "evals": [
+    {
+      "id": 1,
+      "name": "general-package-stow",
+      "prompt": "I installed a local CLI under ~/opt/stow/mytool with bin/mytool and share/man/man1/mytool.1. Help me stow it into ~/opt without touching anything unexpected.",
+      "expected_output": "A safe GNU Stow workflow using explicit stow and target directories, a dry-run before mutation, and verification of resulting relative symlinks.",
+      "files": [],
+      "assertions": [
+        "Identifies the stow directory, target directory, package name, and action",
+        "Runs or recommends stow with -n before the mutating command",
+        "Uses explicit -d and -t options rather than relying only on cwd defaults",
+        "Explains that Stow creates target symlinks and does not delete the package directory",
+        "Includes a verification step for created symlinks"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "restow-after-update",
+      "prompt": "I removed a file from /usr/local/stow/foo/bin and added a new one. What's the right way to refresh the links in /usr/local?",
+      "expected_output": "Guidance to use restow with dry-run first, explaining that restow unstows obsolete links and stows current package contents.",
+      "files": [],
+      "assertions": [
+        "Recommends stow -R for refreshing package links",
+        "Runs or recommends a dry-run restow before applying",
+        "States that restow removes obsolete owned symlinks but not package files",
+        "Uses /usr/local/stow as stow directory and /usr/local as target when matching the prompt"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "conflict-boundary",
+      "prompt": "stow says it can't stow package foo because /usr/local/bin/foo already exists. Help me fix it.",
+      "expected_output": "The agent should switch from normal package management to conflict triage and avoid overwriting the existing target file.",
+      "files": [],
+      "assertions": [
+        "Recognizes this as a conflict-resolution task rather than a clean stow workflow",
+        "Does not recommend deleting or overwriting the existing file without approval",
+        "Checks whether the existing path is owned by Stow",
+        "Mentions using the debug-stow-conflicts workflow or equivalent triage"
+      ]
+    }
+  ]
+}

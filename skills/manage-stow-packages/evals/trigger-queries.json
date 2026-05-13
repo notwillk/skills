@@ -1,0 +1,29 @@
+{
+  "skill_name": "manage-stow-packages",
+  "queries": [
+    {
+      "query": "Set up GNU Stow for packages under /usr/local/stow targeting /usr/local.",
+      "should_trigger": true
+    },
+    {
+      "query": "How do I restow my emacs package after removing an old executable?",
+      "should_trigger": true
+    },
+    {
+      "query": "Create a .stowrc for my local stow package farm.",
+      "should_trigger": true
+    },
+    {
+      "query": "Organize my ~/.zshrc and ~/.config/nvim with Stow dotfiles.",
+      "should_trigger": false
+    },
+    {
+      "query": "Stow reports a conflict for ~/.gitconfig; help me diagnose it.",
+      "should_trigger": false
+    },
+    {
+      "query": "Explain symbolic links in Unix generally.",
+      "should_trigger": false
+    }
+  ]
+}

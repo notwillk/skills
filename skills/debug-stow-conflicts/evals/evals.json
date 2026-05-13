@@ -1,0 +1,44 @@
+{
+  "skill_name": "debug-stow-conflicts",
+  "evals": [
+    {
+      "id": 1,
+      "name": "existing-target-file",
+      "prompt": "GNU Stow refuses to stow zsh because ~/.zshrc already exists. I don't want to lose my current file.",
+      "expected_output": "A conflict triage workflow that preserves the existing target file, checks ownership, and offers safe migration or adoption options.",
+      "files": [],
+      "assertions": [
+        "Classifies ~/.zshrc as an existing target path conflict",
+        "Does not recommend deleting or overwriting the file without approval",
+        "Checks whether the target path is a symlink owned by Stow",
+        "Provides a dry-run diagnostic command with verbosity",
+        "Explains safe alternatives including manual migration or careful --adopt"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "overlapping-package-link",
+      "prompt": "Two Stow packages both want bin/python. How do I stop one package from replacing the other's link?",
+      "expected_output": "Guidance on ownership and overlap policy, including when to use --defer versus --override and restowing affected packages.",
+      "files": [],
+      "assertions": [
+        "Identifies the issue as overlapping package ownership",
+        "Explains --defer for skipping paths already stowed by another package",
+        "Explains --override only for intentional replacement",
+        "Recommends dry-run before applying overlap policy changes"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "happy-path-boundary",
+      "prompt": "I have a clean new package at /opt/stow/foo and want to stow it into /opt.",
+      "expected_output": "The agent should avoid conflict-specific troubleshooting and prefer normal package stow guidance.",
+      "files": [],
+      "assertions": [
+        "Recognizes the task as a clean stow workflow",
+        "Avoids unnecessary conflict diagnosis",
+        "Uses or points to manage-stow-packages style guidance"
+      ]
+    }
+  ]
+}

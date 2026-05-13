@@ -1,0 +1,4 @@
+interface:
+  display_name: "Manage Stow Packages"
+  short_description: "Manage general GNU Stow package farms safely."
+  default_prompt: "Use this skill for clean GNU Stow package workflows: choosing stow and target directories, stowing, unstowing, restowing, configuring .stowrc, and reasoning about tree folding. Prefer the dotfiles or conflict skills for those specialized cases."

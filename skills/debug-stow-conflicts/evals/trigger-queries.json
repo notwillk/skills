@@ -1,0 +1,29 @@
+{
+  "skill_name": "debug-stow-conflicts",
+  "queries": [
+    {
+      "query": "Stow reports a conflict because ~/.gitconfig already exists.",
+      "should_trigger": true
+    },
+    {
+      "query": "A folded Stow tree didn't split open when I added a second package.",
+      "should_trigger": true
+    },
+    {
+      "query": "How should I use --defer and --override for overlapping Stow packages?",
+      "should_trigger": true
+    },
+    {
+      "query": "Create a new dotfiles layout for ~/.zshrc and ~/.config/nvim.",
+      "should_trigger": false
+    },
+    {
+      "query": "Restow package foo after updating its files.",
+      "should_trigger": false
+    },
+    {
+      "query": "What does ln -s do?",
+      "should_trigger": false
+    }
+  ]
+}

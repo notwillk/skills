@@ -1,0 +1,4 @@
+interface:
+  display_name: "Manage Stow Dotfiles"
+  short_description: "Manage home dotfiles with GNU Stow."
+  default_prompt: "Use this skill for GNU Stow dotfiles workflows: organizing a dotfiles repository, mapping dot- paths with --dotfiles, targeting $HOME or ~/.config, migrating existing hidden config, and writing dotfile-focused .stowrc defaults."

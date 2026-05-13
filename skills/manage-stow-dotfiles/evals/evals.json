@@ -1,0 +1,44 @@
+{
+  "skill_name": "manage-stow-dotfiles",
+  "evals": [
+    {
+      "id": 1,
+      "name": "dotfiles-layout",
+      "prompt": "I want to manage ~/.zshrc, ~/.gitconfig, and ~/.config/nvim with GNU Stow from ~/dotfiles. How should I lay it out?",
+      "expected_output": "A dotfiles repository layout using package directories and dot- prefixed paths with --dotfiles, plus a dry-run command targeting $HOME.",
+      "files": [],
+      "assertions": [
+        "Uses package directories such as zsh, git, or nvim",
+        "Maps dot-zshrc to ~/.zshrc and dot-config to ~/.config",
+        "Recommends stow --dotfiles with explicit -d and -t options",
+        "Runs or recommends a dry-run before applying",
+        "Warns that existing home files should be treated as user data"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "adopt-existing-dotfile",
+      "prompt": "I already have a real ~/.zshrc and want Stow to take it into my ~/dotfiles/zsh package. Is --adopt right?",
+      "expected_output": "A careful adoption workflow explaining that --adopt mutates the package directory and requiring dry-run plus diff review.",
+      "files": [],
+      "assertions": [
+        "Explains that --adopt moves existing target files into the package directory",
+        "Runs or recommends stow -n -v --adopt before applying",
+        "Tells the user to inspect the dotfiles repository diff after adoption",
+        "Does not present --adopt as a routine default flag"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "general-package-boundary",
+      "prompt": "I built Perl from source into /usr/local/stow/perl and want links in /usr/local/bin.",
+      "expected_output": "The agent should prefer the general package skill rather than dotfile-specific guidance.",
+      "files": [],
+      "assertions": [
+        "Recognizes this as a non-dotfile Stow package workflow",
+        "Avoids recommending dot- path layout or --dotfiles",
+        "Uses or points to manage-stow-packages style guidance"
+      ]
+    }
+  ]
+}

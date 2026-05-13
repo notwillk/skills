@@ -1,0 +1,4 @@
+interface:
+  display_name: "Debug Stow Conflicts"
+  short_description: "Diagnose and resolve GNU Stow conflicts safely."
+  default_prompt: "Use this skill when GNU Stow reports conflicts or unsafe states: existing target files, ownership problems, folded tree surprises, overlapping packages, risky --adopt/--defer/--override usage, or multiple stow directories."
