@@ -1,0 +1,99 @@
+{
+  "skill_name": "manage-tolaria-vault",
+  "evals": [
+    {
+      "id": 1,
+      "name": "inbox-cleanup",
+      "prompt": "I have ten unlinked notes in my Tolaria Inbox. Help me decide what to delete, what to connect, and what should become evergreen notes.",
+      "expected_output": "A capture-to-organize workflow that treats Inbox as derived from unlinked notes and connects surviving notes to useful containers.",
+      "files": [],
+      "assertions": [
+        "Explains that the Inbox is a derived state, not a folder",
+        "Uses the question 'what is this useful for?' or equivalent",
+        "Allows deleting weak captures",
+        "Connects surviving notes to Projects, Responsibilities, Procedures, Topics, Events, or People",
+        "Reserves evergreen notes for reusable timeless ideas"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "project-note-shape",
+      "prompt": "Create a Tolaria project note for launching a newsletter sponsorship product.",
+      "expected_output": "A Markdown project note shape with frontmatter and relation conventions that remains portable plain text.",
+      "files": [],
+      "assertions": [
+        "Classifies the item as a Project",
+        "Includes useful frontmatter such as type, status, Workspace, and dates",
+        "Uses canonical typed relation fields such as belongs_to, related_to, or has rather than only prose links",
+        "Keeps the output readable as plain Markdown"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "implementation-boundary",
+      "prompt": "Change the Tolaria app so status frontmatter renders as a colored chip.",
+      "expected_output": "The agent should recognize this as implementation work rather than vault-content organization.",
+      "files": [],
+      "assertions": [
+        "Recognizes this as app implementation work outside the vault-content scope",
+        "Avoids editing vault notes as the main answer",
+        "Mentions semantic property rendering or app code behavior"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "system-property-schema",
+      "prompt": "Create a Tolaria Type note for Projects with sidebar order, sidebar label, color, icon, and pinned status property.",
+      "expected_output": "A Type note that stores UI preferences as underscore-prefixed system properties while keeping normal semantic fields user-visible.",
+      "files": [],
+      "assertions": [
+        "Uses underscore-prefixed fields such as _order, _sidebar_label, _color, _icon, and _pinned_properties",
+        "Does not use non-underscore fields for internal UI preferences",
+        "Uses canonical semantic fields such as type and status where appropriate",
+        "Keeps the configuration in Markdown frontmatter rather than app-local state",
+        "Mentions that _* fields must be hidden from normal Properties/search/filter surfaces while preserved on disk"
+      ]
+    },
+    {
+      "id": 5,
+      "name": "legacy-title-and-display-name",
+      "prompt": "Create a new Tolaria Person note for Luca Rossi. Should I include title: in the frontmatter?",
+      "expected_output": "A Person note that uses an H1 as the display title and avoids writing title: for a new note unless needed as a legacy fallback.",
+      "files": [],
+      "assertions": [
+        "Uses an H1 heading as the primary display title",
+        "Does not add title: automatically for a new note",
+        "Uses type: Person or the established vault type convention",
+        "Keeps the note readable as plain Markdown"
+      ]
+    },
+    {
+      "id": 6,
+      "name": "legacy-relation-migration",
+      "prompt": "Some old Tolaria notes use 'Belongs to' and 'Related to' in frontmatter. Normalize them while keeping diffs small.",
+      "expected_output": "A migration plan that maps humanized relation fields to canonical belongs_to and related_to fields without destructive rewrites.",
+      "files": [],
+      "assertions": [
+        "Maps Belongs to to belongs_to",
+        "Maps Related to to related_to",
+        "Preserves unknown frontmatter fields",
+        "Warns to inspect nearby notes and report changed files",
+        "Keeps rewrites minimal for readable Git diffs"
+      ]
+    },
+    {
+      "id": 7,
+      "name": "frontmatter-parser-boundary",
+      "prompt": "I am changing Tolaria frontmatter parsing. What schema rules must I preserve around _fields and user-visible properties?",
+      "expected_output": "A schema-behavior checklist covering _* filtering from UI/search/filter surfaces, preservation on disk, and canonical relation humanization.",
+      "files": [],
+      "assertions": [
+        "States that _* fields are hidden from Properties, search facets, filters, and normal UI",
+        "States that _* fields remain editable in raw editor and preserved on disk",
+        "Mentions vault/mod.rs or utils/frontmatter.ts as parser locations",
+        "Mentions humanizing belongs_to, related_to, and has in UI",
+        "Preserves unknown non-system frontmatter fields"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+{
+  "skill_name": "manage-tolaria-vault",
+  "queries": [
+    {
+      "query": "Organize my Tolaria Inbox and link notes to the right projects.",
+      "should_trigger": true
+    },
+    {
+      "query": "Create a Tolaria Responsibility note for subscriber growth KPIs.",
+      "should_trigger": true
+    },
+    {
+      "query": "Normalize Workspace and belongs_to fields across this vault.",
+      "should_trigger": true
+    },
+    {
+      "query": "Create a Type note using _icon, _color, and _pinned_properties.",
+      "should_trigger": true
+    },
+    {
+      "query": "Should a new Tolaria note include title: or just an H1?",
+      "should_trigger": true
+    },
+    {
+      "query": "Migrate old Belongs to and Related to frontmatter fields to canonical Tolaria keys.",
+      "should_trigger": true
+    },
+    {
+      "query": "What should Tolaria's parser do with _sidebar_label and _width fields?",
+      "should_trigger": true
+    },
+    {
+      "query": "Turn these raw Kindle highlights into Tolaria evergreen notes connected to topics.",
+      "should_trigger": true
+    },
+    {
+      "query": "Create a Procedure note and connect it to a Responsibility using belongs_to.",
+      "should_trigger": true
+    },
+    {
+      "query": "Which Tolaria frontmatter fields should I use for icon, URL, date range, and progress?",
+      "should_trigger": true
+    },
+    {
+      "query": "Should Tolaria be open source forever?",
+      "should_trigger": false
+    },
+    {
+      "query": "Implement workspace filtering in the Tolaria UI.",
+      "should_trigger": false
+    },
+    {
+      "query": "Compare Tolaria's market positioning against Obsidian and Notion.",
+      "should_trigger": false
+    },
+    {
+      "query": "Write React components for colored status chips.",
+      "should_trigger": false
+    },
+    {
+      "query": "Implement the Rust file watcher for Tolaria vault changes.",
+      "should_trigger": false
+    },
+    {
+      "query": "Design a pricing page for Tolaria Pro.",
+      "should_trigger": false
+    },
+    {
+      "query": "Explain YAML frontmatter in a Hugo static site.",
+      "should_trigger": false
+    },
+    {
+      "query": "Create a generic Markdown note-taking template unrelated to Tolaria.",
+      "should_trigger": false
+    },
+    {
+      "query": "Summarize the Tolaria product vision for investors.",
+      "should_trigger": false
+    },
+    {
+      "query": "Summarize this unrelated Markdown document.",
+      "should_trigger": false
+    }
+  ]
+}

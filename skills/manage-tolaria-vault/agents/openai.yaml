@@ -1,0 +1,4 @@
+interface:
+  display_name: "Manage Tolaria Vault"
+  short_description: "Organize Tolaria Markdown vault knowledge."
+  default_prompt: "Use this skill when creating, organizing, reviewing, or refactoring Tolaria vault notes, note types, canonical frontmatter schema, semantic fields, typed relations, _ system properties, parser/UI filtering expectations, Inbox workflows, and capture-to-organize knowledge flows."
